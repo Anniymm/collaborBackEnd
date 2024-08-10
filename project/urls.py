@@ -9,12 +9,12 @@
 #     path('schema/', SpectacularAPIView.as_view(), name='schema'),
 #     path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 #     path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc-ui'),
-# <<<<<<< HEAD
+# # <<<<<<< HEAD
     
-# =======
+# # =======
 #     path('auth/', include('googleauth.urls')),
 #     path('accounts/', include('allauth.urls')),
-# >>>>>>> googleauth
+# #>>>>>>> googleauth
 # ]
 from django.contrib import admin
 from django.urls import path, include 
@@ -26,8 +26,9 @@ urlpatterns = [
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc-ui'),
-    path('auth/', include('googleauth.urls')),  # Include from `googleauth` branch
-    path('accounts/', include('allauth.urls')),  # Include from `googleauth` branch
+    path('auth/', include('googleauth.urls')),  
+    path('accounts/', include('allauth.urls')),  
     path('products/', include('products.urls')),
+    path('contacts/', include('contacts.urls')),
 ]
 
