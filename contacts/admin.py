@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import contactsUs
 
-# Register your models here.
+@admin.register(contactsUs)
+class ContactInfoAdmin(admin.ModelAdmin):
+    list_display = ('email', 'phone', 'time')
