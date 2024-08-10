@@ -29,8 +29,45 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'drf_spectacular',
     'users',
+    'django.contrib.sites',  
+    'allauth',               
+    'allauth.account',       
+    'allauth.socialaccount', 
+    'allauth.socialaccount.providers.google', 
+    'rest_framework.authtoken',  
+    'dj_rest_auth',         
+    'dj_rest_auth.registration',
     
 ]
+
+SITE_ID = 1
+GOOGLE_CLIENT_ID = '525811430183-gh95mdnt0ifl78q7r1h8dnddgovjvtm4.apps.googleusercontent.com'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'APP': {
+            'client_id': '525811430183-gh95mdnt0ifl78q7r1h8dnddgovjvtm4.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    }
+}
+
+
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -40,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
