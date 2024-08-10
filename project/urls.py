@@ -11,4 +11,5 @@ urlpatterns = [
     path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc-ui'),
     path('auth/', include('googleauth.urls')),
     path('accounts/', include('allauth.urls')),
+    path('products/', include('products.urls')),
 ]
