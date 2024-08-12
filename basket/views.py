@@ -49,7 +49,7 @@ class RemoveFromBasketView(APIView): # washlistvis
         else:
             return Response({'detail': 'Item not found in the basket.'}, status=status.HTTP_404_NOT_FOUND)
 
-
+# aqve unda vcado filtraciebis damateba mere
 class BasketDetailView(generics.RetrieveAPIView): # get basketis produktebistvis 
     queryset = Basket.objects.all()
     serializer_class = BasketSerializer
