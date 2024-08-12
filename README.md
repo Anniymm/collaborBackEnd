@@ -22,7 +22,7 @@ Follow these steps to set up the project locally:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/collaborBackEnd.git
+   git clone https://github.com/Anniymm/collaborBackEnd.git
    cd collaborBackEnd
 
 2. **Create and Activate a Virtual Environment**
