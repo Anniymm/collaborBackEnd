@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'products',
     'contacts',
+    'basket',
 ]
 
 SITE_ID = 1
