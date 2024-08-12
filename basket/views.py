@@ -4,8 +4,10 @@ from rest_framework.views import APIView
 from .models import Basket, BasketItem, Product
 from .serializers import BasketItemSerializer, BasketSerializer
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 class BasketDetailView(generics.RetrieveAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Basket.objects.all()
     serializer_class = BasketSerializer
 
@@ -14,6 +16,7 @@ class BasketDetailView(generics.RetrieveAPIView):
         return Basket.objects.get(user=self.request.user)
 
 class AddToBasketView(APIView):  #damatebistvis
+    permission_classes = [IsAuthenticated]
     def post(self, request, product_id):
         user = request.user
         product = Product.objects.get(id=product_id)
@@ -35,7 +38,9 @@ class AddToBasketView(APIView):  #damatebistvis
         serializer = BasketItemSerializer(basket_item)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 class RemoveFromBasketView(APIView): # washlistvis
+    permission_classes = [IsAuthenticated]
     def delete(self, request, product_id):
         user = request.user
         product = Product.objects.get(id=product_id)
@@ -48,11 +53,3 @@ class RemoveFromBasketView(APIView): # washlistvis
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             return Response({'detail': 'Item not found in the basket.'}, status=status.HTTP_404_NOT_FOUND)
-
-# aqve unda vcado filtraciebis damateba mere
-class BasketDetailView(generics.RetrieveAPIView): # get basketis produktebistvis 
-    queryset = Basket.objects.all()
-    serializer_class = BasketSerializer
-
-    def get_object(self):
-        return Basket.objects.get(user=self.request.user)
