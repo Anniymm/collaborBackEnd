@@ -1,4 +1,4 @@
-# E-Commerce Site Backend
+# E-Commerce website Backend
 
   Welcome to the backend of the e-commerce website! This project is built using Django and Django REST Framework (DRF). It provides a comprehensive API for managing products, users, baskets, and orders.
 
