@@ -184,13 +184,26 @@ REST_FRAMEWORK = {
 
 from datetime import timedelta
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=10), #dro unda shevcvalo
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1), #dro unda shevcvalo
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30)
 }
 
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'e-commerce',
-    'DESCRIPTION': 'descriptionis damateba ',
+    'TITLE': 'E-Commerce API',
+    'DESCRIPTION': ("Welcome to the E-Commerce API documentation. This API provides access to a range of e-commerce functionalities, "
+            "including managing products, categories, users, orders, and baskets. The API allows you to perform operations such as "
+            "viewing product details, adding items to a shopping cart, placing orders, and managing user accounts. "
+            "\n\n"
+            "### Features:\n"
+            "- **Product Management:** Retrieve product information, search for products, and view product details.\n"
+            "- **Basket Management:** Add products to the shopping cart, view the cart contents, and update or remove items.\n"
+            "- **Order Management:** Place new orders, view order history, and track order status.\n"
+            "- **User Management:** Register new users, log in, and manage user profiles.\n"
+            "\n\n"
+            "### Authentication:\n"
+            "This API requires authentication for most endpoints. Users must authenticate via JWT tokens to access protected resources.\n"
+            "\n\n"
+            "For more detailed information on each endpoint and its usage, please refer to the endpoint documentation."),
     'VERSION': '1.0.0',
 }
