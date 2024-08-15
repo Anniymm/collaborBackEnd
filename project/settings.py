@@ -13,8 +13,8 @@ SECRET_KEY = 'django-insecure-f8f)9x$26-kq@q*gqsvnpymgpzhqu7$k=a(hdwa-nxy$lw7f0l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://ann1.pythonanywhere.com']
-
+# ALLOWED_HOSTS = ['ann1.pythonanywhere.com'] # for pythonanywhere 
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -107,16 +107,23 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {   # for pythonanywhere 
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ann1$mydb',
+#         'USER': 'ann1',
+#         'PASSWORD': '2jnBEqIl',
+#         'HOST': 'ann1.mysql.pythonanywhere-services.com',
+#         'PORT': '3306',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ann1$mydb',
-        'USER': 'ann1',
-        'PASSWORD': '2jnBEqIl',
-        'HOST': 'ann1.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
+
 
 
 
