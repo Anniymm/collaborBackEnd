@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-f8f)9x$26-kq@q*gqsvnpymgpzhqu7$k=a(hdwa-nxy$lw7f0l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ann1.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['ann1.pythonanywhere.com', '127.0.0.1', 'www.ecommerce.com']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'products',
     'contacts',
     'basket',
+    'django_filters',
 ]
 
 SITE_ID = 1
@@ -88,7 +89,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'project.urls'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173/',
+    'http://localhost:5173',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True

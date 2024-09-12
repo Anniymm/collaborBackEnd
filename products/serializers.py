@@ -27,6 +27,7 @@ class FeaturedSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     collections = serializers.PrimaryKeyRelatedField(queryset=Collection.objects.all(), many=True)
     features = serializers.PrimaryKeyRelatedField(queryset=Feature.objects.all(), many=True)
+    featured = serializers.PrimaryKeyRelatedField(queryset=Featured.objects.all(), many=True)
     # categories = CategorySerializer(many=True, read_only=True)
     # features = FeatureSerializer(many=True, read_only=True)
     # collections = CollectionSerializer(many=True, read_only=True)
@@ -34,6 +35,6 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = [
             'id', 'name', 'slug', 'description', 'price', 
-            'available', 'categories', 
+            'available', 'categories', 'featured',
             'features', 'collections', 'image'
         ]
