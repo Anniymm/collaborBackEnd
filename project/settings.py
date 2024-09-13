@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-f8f)9x$26-kq@q*gqsvnpymgpzhqu7$k=a(hdwa-nxy$lw7f0l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ann1.pythonanywhere.com', '127.0.0.1', 'www.ecommerce.com']
+ALLOWED_HOSTS = ['ann1.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
